@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MODERN REALITY HOTEL</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sofia">
+
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            background-color: snow; 
+        }
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .header{
+            max-width: 100%;
+            background-color: black;
+            padding: 10px 20px 5px;  
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: ;
+            overflow: hidden;
+        }
+        li a, .dropbtn{
+            color: powderblue;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 25px 15px;
+            background-color: grey;
+            border-right: 1px solid white;
+            text-align: center;
+        }
+        li a:last-child{
+            border-right: ;
+        }   
+        
+        li{
+            float: left;
+        }
+        li a:hover, .dropdown:hover .dropbtn{
+            background-color: powderblue;
+            color: #000000;
+        }
+        li.dropdown{
+            display: inline-block;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color:;
+            max-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a{
+            color: #ffffff;
+            padding: 15px 8px 10px;
+            display: block;
+            text-align: left;
+            border-right: none;
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+        .logo{
+            float: left;
+            width: 30%;
+            padding: ;
+        }
+        .navbar{
+            float: left;
+            max-width: 70%;
+            padding: 10px 20px 15px;
+            display: block;
+        }
+        .menu{
+            float: right;
+            margin-right: 7px;
+            margin-top: 40px;
+            color: powderblue;
+            text-decoration: none;
+            display: none;
+            padding: 0px 8px 3px;
+            background-color: grey;
+            border-right: 1px solid white;
+            text-align: center;
+            font-size: 40px;
+
+        }
+        h1{
+            background-color: #556b3f;
+            color: powderblue;
+            padding: 35px 40px 65px;
+            margin-bottom: 0 ;
+            text-align: center;
+            font-style: normal;
+            font-family: "Sofia", sans-serif;
+        }
+        h2{
+            color: red;
+        }
+        h3{
+            color: sienna;
+            font-family: "Sofia" sans-serif;
+            text-shadow: 2px 3px 3px black;
+        }
+        .about{
+            color: peru;
+            align-content: justify;
+            padding: 30px 26px 35px;
+            max-width: 70%;
+            float: left;
+        }
+        .lmore{
+            max-width: 23.2%;
+            float: left;
+            
+        }
+        .lmore a{
+            background-color: sienna;
+            border: 1px solid #fffff0;
+            padding: 11px 14px;
+            margin: 130px 70px 10px;
+            text-align: center;
+            position: absolute;
+            bottom: 18px;
+            right: 20px;
+        }
+        .room{
+            float: left;
+            min-width: 45%;
+            margin: 20px 0px 15px;
+        }
+        .class{
+            float: left;
+            width: 35%;
+            border: 1px outset powderblue;
+            margin: 20px 0px 10px;
+            padding: 30px 15px 25px;
+            position: relative;
+            box-shadow: 0 4px 7px rgba(0,0,0,.4)
+        }
+        .cdetailbtn{
+            position: absolute;
+            left: 20px;
+            
+            color: brown;
+        }
+        .cdetaildetail{
+            display: none;
+            position: absolute;
+            background-color: #e6e6fa;
+            color: sienna;
+            padding: 10px 20px;
+            z-index: 1;
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+            border: 2px dotted black;
+            top: 25px;
+        }
+        span.cdetail{
+            display: inline-block;
+        }
+        .cdetail:hover .cdetaildetail{
+            display: block;
+        }
+        .clink{
+            float: left;
+            min-width: 15%;
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+        }
+        .clink a{
+            background-color: sienna;
+            border: 1px solid #fffff0;
+            padding: 11px 14px;
+            margin: 30px 17px 40px;
+            text-align: center;
+            animation-name: links;
+            animation-duration: 6s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+        .img{
+            min-width: 500px;
+            height: 250px;
+            margin-top: 5px;
+            border-radius: 6px;
+        }
+        .hall{
+            float: left;
+            width: 50%;
+        }
+        .rst{
+            float: left;
+            width: 50%;
+        }
+        .gallery{
+            text-align: center;
+            margin: 30px 15px 60px;
+            padding: 40px 28px;
+            font-size: 18px;
+            font-family: sans-serif;
+            border-bottom: 1px solid powderblue;
+            text-decoration: underline;
+        }
+        footer{
+            background-color: #800000;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            max-width: 100%;
+            padding-top: 18px;
+        }
+        .fleft{
+            float: left;
+            width: 20%;
+            text-align: left;
+            align-content: center;
+            padding-left: 60px;
+        }
+        .fcenter{
+            float: left;
+            width: 40%;
+            text-align: center;
+            margin-left: 60px;
+        }
+        .fright{
+            float: left;
+            width: 20%;
+            text-align: center;
+            margin-left: 60px;
+        }
+        .now{
+            border: 1px solid #ffffff;
+            color: powderblue;
+            padding: 8px 20px;
+            background-color: black;
+            cursor: pointer;
+        }
+        input[type=text]{
+            border: 1px solid #000000;
+            padding: 16px 20px;
+            margin: 12px;
+            min-width: 200px;
+        }
+        .community{
+            color: powderblue;
+            font-style: 22px;
+            margin-bottom: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: powderblue;
+        }
+        a:hover{
+            color: orange;
+        }
+        .division{
+            background-color: silver;
+            margin: 20px 10px 15px;
+            position: relative;
+            max-width: 100%;
+        }
+        .gal{
+            background-color: black;
+            padding-left: 4px;
+        }
+        .gal img{
+            border-radius: 50%;
+            max-width: 600px;
+            height: 450px;
+        }
+        .desc{
+            text-align: center;
+            color: powderblue;
+            padding: 20px 12px;
+            font-size: 28px;
+            font-weight: 12px;
+            font-family: sans-serif;
+        }
+        .copyright{
+            clear: both;
+            text-align: center;
+            border-top: 1px dotted white;
+            margin: 0 0 5px 0;
+            padding-top: 5px;
+        }
+        .backToTop {
+            background-color: white;
+            color: black;
+            width: 3%;
+            height: 55px;
+            position: fixed;
+            right: 5px;
+            bottom: 10px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+            z-index: 1;
+        }
+
+        @keyframes links {
+            50% {color: peru; background-color: skyblue}
+            100% {color: gold; background-color: silver}
+        }
+
+
+        @media screen and (max-width: 800px){
+            .logo{
+            	max-width: 20%;
+                padding: 20px;
+                margin-left: 0;
+            }
+            .navbar{
+            	max-width: 100%;
+            	float: right;
+                display: none;
+            }
+            .menu{
+                display: block;
+                border-right: none;
+            }
+            li a{
+            	padding: 10px 5px 15px;
+            }
+            h1{
+                font-size: 26px;
+                padding: 25px 0 ;
+            }
+            .about{
+                float: none;
+            }
+            .lmore a{
+                right: 0%;
+                bottom: 10%;
+                margin-right: 15px;
+            }
+            .img{
+        	    min-width: 350px;
+        	}
+        	.division{
+        		width: 100%;
+        		margin-left: 0;
+        	}
+            .room{
+                padding-left: 6px;
+            }
+        	.class{
+        		min-width: 60%;
+                margin-left: 5px;
+        	}
+        	.clink{
+        		right: 4px;
+        		bottom: 4px;
+                
+        	}
+        	.hall, .rst{
+        		min-width: 100%;
+        	}
+        	.gal img{
+        		max-width: 100%;
+                border-radius: 0;
+                height: 350px;
+                margin-top: 5px;
+                margin-right: 5px
+        	}
+        	footer{
+        		max-width: 100%;
+                padding-bottom: 8px;
+        	}
+        	.fleft{
+        		padding-left: 10px;
+        		width: 35%;
+                margin-left: 20%;
+        	}
+            .fcenter{
+            	margin-left: 30px;
+            	width: 50%;
+                clear: both;
+            }
+            .fright{
+                margin-right: 20px;
+                width: 50%;
+                clear: both;
+            }
+            input[type=text]{
+                margin-left: -5%;
+            }
+            input[type=submit]{
+                margin-bottom: 5px;
+            }
+            .backToTop{
+                right: 10px;
+                width: 8%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="row header">
+        <div class="logo">
+            <img src="images/hlogo.png" width="180px" height="100px">
+        </div>
+        <div class="menu"><a href="">&#9776;</a></div>
+        <div class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="hotelabout.html">About us</a>
+                        <a href="hotelcontact.html">Contact us</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="javascript:void(0)">Recreational services</a>
+                    <div class="dropdown-content">
+                        <a href="hoteltennis.html">Tennis Court</a>
+                        <a href="hotelbasketball.html">Basketball Court</a>
+                        <a href="hotelvolleyball.html">Volleyball Court</a>
+                        <a href="hotelswimmingpool.html">Swimming pool</a>
+                        <a href="hotelgym.html">GYM Center</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn" href="javascript:void(0)">Events</a>
+                    <div class="dropdown-content">
+                        <a href="">New year</a>
+                        <a href="">Birthday</a>
+                        <a href="">Wedding</a>
+                    </div>
+                </li>
+                <li><a href="hotelrestuarant.html">Restuarant</a></li>
+                <li><a href="hotelgallery.html">Garden</a></li>
+                <li><a style="border-right: none;" href="hotel_gallery.html">Gallery</a></li>
+            </ul> 
+        </div>
+    </div>
+
+    <div>
+        <img style="max-width: 100%; max-height: 600px;" src="EKO Hotels & Suites_files/eko-slide3.jpg">
+        <a href="" class="backToTop">&#8679;</a>
+    </div>
+
+    <div>
+        <h1><span style="color: thistle">WELCOME</span> <span style="color: lightcyan;">TO</span> MODERN REALITY HOTEL</h1>
+    </div>
+    <div class="row" style="position: relative; background-color: pink">
+        <div class="about">
+        <h2>ABOUT US</h2>
+        <p>MODERN REALITY HOTEL is the most preferred hotel in Nigeria, and it is all about the right mix! Located in .........., we offer our clients a perfect blend of business & leisure amenities with dining and recreational options delicately infused in one amazing space. We crown all these with services that meet the highest international standards.</p>
+        <p>Our hotels are designed for your comfort and convenience. Your security is our primary concern and you will find our customer care second to none.</p>
+        </div>
+        <div class="lmore">
+        <p><a href="hotelabout.html">Learn more</a></p>
+        </div>
+    </div>
+    <div class="row division">
+        <div class="room">
+            <img class="img" src="EKO Hotels & Suites_files/eko-gardens.jpg">
+        </div>
+        <div class="class">
+            <h3>DELUXE ROOMS</h3>
+            <p align="justify"> Deluxe rooms are usually larger than their standard counterparts, include a bathtub and a shower in the bathroom, and include more high-end amenities. Deluxe rooms offer guests the following: Bay view, city view, mountain view, or other desirable scenery for travelers to enjoy. Some include patios, balconies, a private terrace, and other additions.</p>
+            <span class="cdetail">
+                <a href="javascript:void(0)" class="cdetailbtn">More Detail</a>
+                <div class="cdetaildetail" align="justify">MODERN REALITY HOTEL is the most preferred hotel in Nigeria, and it is all about the right mix! Located in .........., we offer our clients a perfect blend of business & leisure amenities with dining and recreational options delicately infused in one amazing space. We crown all these with services that meet the highest international standards. Lower countertops and beds, wider travel paths, and accessible bathroom accommodations are some of the modifications that can be found in accessible rooms. Hearing or vision accessible rooms can be equipped with different phone systems, fire alarms (light vs. sound), or alarm clocks, for example. 
+Some hotel rooms are popular based on special accommodations or policies offered. Casinos, resorts, and many standard hotels still offer smoking accommodations, though often limited in quantity. Hotel room types may also be distinguished by their pet-friendly status.
+</div>
+            </span>
+        </div>
+        <div class="clink">
+            <p><a style="padding-right: 23px;" href="hotel_gallery.html">SEE MORE</a></p>
+            <p><a href="linktestpage.html">BOOK NOW</a></p>
+        </div>
+    </div>
+    <div class="row division">
+        <div class="room">
+            <img class="img" src="EKO Hotels & Suites_files/eko-hotel.jpg">
+        </div>
+        <div class="class">
+            <h3>STANDARD ROOMS</h3>
+            <p align="justify">Most standard rooms offer a room and separate bathroom area for travelers to book nightly. These rooms are marketed by the type of sleeping arrangements available: King room, queen room, or double room. While the layout of the room vary in terms of additional furniture, the bathroom includes a shower/tub combination, as well as included amenities.</p>
+            <span class="cdetail">
+                <a href="javascript:void(0)" class="cdetailbtn">More Detail</a>
+                <div class="cdetaildetail" align="justify">MODERN REALITY HOTEL is the most preferred hotel in Nigeria, and it is all about the right mix! Located in .........., we offer our clients a perfect blend of business & leisure amenities with dining and recreational options delicately infused in one amazing space. We crown all these with services that meet the highest international standards. Lower countertops and beds, wider travel paths, and accessible bathroom accommodations are some of the modifications that can be found in accessible rooms. Hearing or vision accessible rooms can be equipped with different phone systems, fire alarms (light vs. sound), or alarm clocks, for example. 
+Some hotel rooms are popular based on special accommodations or policies offered. Casinos, resorts, and many standard hotels still offer smoking accommodations, though often limited in quantity. Hotel room types may also be distinguished by their pet-friendly status.
+</div>
+            </span>
+        </div>
+        <div class="clink">
+            <p><a style="padding-right: 23px;" href="hotel_gallery.html">SEE MORE</a></p>
+            <p><a href="linktestpage.html">BOOK NOW</a></p>
+        </div>
+    </div>
+    <div class="row division">
+        <div class="room">
+            <img class="img" src="EKO Hotels & Suites_files/gallery_img5.jpg">
+        </div>
+        <div class="class">
+            <h3>COMMON ROOMS </h3>
+            <p align="justify">Common rooms overnight accommodations include only a room: Dorm-style arenas, some inns, bed and breakfasts, and some hostels. In these arenas, the bathroom, kitchen area, and other living spaces may be shared by multiple guests; rental includes a private room only. Beds and accessible bathroom accommodations can be found in accessible rooms.</p>
+            <span class="cdetail">
+                <a href="javascript:void(0)" class="cdetailbtn"> More Detail</a>
+                <div class="cdetaildetail" align="justify">MODERN REALITY HOTEL is the most preferred hotel in Nigeria, and it is all about the right mix! Located in .........., we offer our clients a perfect blend of business & leisure amenities with dining and recreational options delicately infused in one amazing space. We crown all these with services that meet the highest international standards. Lower countertops and beds, wider travel paths, and accessible bathroom accommodations are some of the modifications that can be found in accessible rooms. Hearing or vision accessible rooms can be equipped with different phone systems, fire alarms (light vs. sound), or alarm clocks, for example. Some hotel rooms are popular based on special accommodations or policies offered. Casinos, resorts, and many standard hotels still offer smoking accommodations, though often limited in quantity. Hotel room types may also be distinguished by their pet-friendly status. </div>
+            </span>
+        </div>
+        <div class="clink">
+            <p><a style="padding-right: 23px;" href="hotel_gallery.html">SEE MORE</a></p>
+            <p><a href="linktestpage.html">BOOK NOW</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="hall gal">
+            <div>
+                <img src="EKO Hotels & Suites_files/gallery_img11.jpg"></div>
+            <div class="desc">OUR EVENT HALL</div>
+        </div>
+        <div class="rst gal">
+            <div><img src="EKO Hotels & Suites_files/red-chinese-restaurant.jpg"></div>
+            <div class="desc">OUR RESTAURANT</div>
+        </div>
+    </div>
+    <div class="row gallery">
+        <a href="hotel_gallery.html">GALLERY</a>
+    </div>
+    <footer class="row" >
+        <div class="fleft">
+            <p><a href="hotelabout.html">HOME</a></p>
+            <p><a href="hotel_gallery.html">GALLERY</a></p>
+            <p><a href="hotelabout.html">ABOUT</a></p>
+            <p><a href="hotelrestuarant.html">RESTUARANT</a></p>
+            <p><a href="hotelevent.html">EVENT</a></p>
+            <p><a href="hotelgallery.html">GARDEN</a></p>
+            <p><a href="hotelcontact.html">CONTACT US</a></p>
+        </div>
+        <div class="fcenter">
+            <p><img src="images/hlogo.png" width="150px" height="100px"></p>
+            <p><span>Address: Bembo, Elere road, Apata Ibadan</span></p>
+            <p><img src=""><span>Contact: +234 813 1664 966, +234 705 4185 156</span></p>
+            <p><img src=""><span>Email: adeyemoabdullateef94@gmail.com</span></p>
+            <p>
+                <span><a href="linktestpage.html"><img src="icons-32by32/facebook.png"></a></span>
+                <span><a href="linktestpage.html"><img src="icons-32by32/wattsapp.png"></a></span>
+                <span><a href="linktestpage.html"><img src="icons-32by32/twitter.png"></a></span>
+                <span><a href="mailto:adeyemoabdullateef94@gmail.com"><img src="icons-32by32/gmail.png"></a></span>
+            </p>
+        </div>
+        <div class="fright">
+            <p class="community">COMMUNITY</p>
+            <p>Suscribe to our email community to recieve updates and news</p>
+            
+            <form>
+                <input type="text" name="email" id="email" placeholder="Email Address" required=""><br>
+                <input type="submit" name="submit" value="Suscribe now" class="now">
+            
+            </form>
+
+        </div>
+        <div class="copyright">&copy; 2024 Created by ABDULLATEEF</div>
+    </footer>
+    
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "navbar") {
+                x.className += "responsive";
+            } else {
+                x.className = "navbar";
+            }
+        }
+    </script>
+
+</body>
+</html>
